@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block admin_panel %}
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Создать
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{{ url_for('create_post') }}">Пост</a>
+        <a class="dropdown-item" href="{{ url_for('create_tag') }}">Тег</a>
+      </div>
+    </div>
+  <a href="{% if detail  %} {{url_for('post_edit', slug=post.slug)}} {% endif %}" class="btn btn-light edit" style="{% if detail  %} display:block; {% endif %}">Редактировать</a>
+  <a href="{% if detail  %} {{url_for('post_delete', slug=post.slug)}} {% endif %}" class="btn btn-danger delete" style="{% if detail  %} display:block; {% endif %}">Удалить</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base_blog.html' %}
+
+{% block title %}
+  Удаление тега "{{ tag.title|title }}"
+{% endblock %}
+
+{% block content %}
+
+  <form class="" action="" method="post">
+
+    <h3>Вы уверены, что хотите удалить: <b>"{{ tag.title|title }}"</b>?</h3>
+    {{ form.hidden_tag() }}
+    <a class="btn btn-primary" href="{{ url_for('tag_detail', slug=tag.slug) }}">Закрыть</a>
+    {{ form.submit(type="submit", class="btn btn-danger") }}
+  </form>
+
+{% endblock %}
