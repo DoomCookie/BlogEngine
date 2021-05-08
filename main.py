@@ -26,7 +26,7 @@ from time import time
 #        проверка ссылки на то, что она не совпадает с create, delete*
 #        проверка, что ссылка уникальная, если нет добавить к ней время*
 #        Отображение не всего текста в превьюхе*
-#        REFACTORING всего кода на одинаковые названия, ковычки, красоту
+#        REFACTORING всего кода на одинаковые названия, ковычки, красоту*
 #        запилть лайки дизлайки для обычных пользователей
 #        админка для назначения пользователей админами
 #        добавить комментарии - космос
@@ -244,7 +244,7 @@ def main():
     api.add_resource(post_resources.PostListResource, '/api/posts')
 
     # для одного объекта
-    api.add_resource(post_resources.PostResource, '/api/post/<int:post_id>')
+    api.add_resource(post_resources.PostResource, '/api/posts/<int:post_id>')
 
     db_session.global_init(DB_PATH)
     app.run(port=5000, host='127.0.0.1')
